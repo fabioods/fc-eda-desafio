@@ -30,4 +30,4 @@ RUN go build -o balance ./cmd/balance/
 EXPOSE 3003
 
 # Utiliza o script de espera para garantir que o MySQL esteja pronto antes de iniciar a aplicação
-CMD ["/wait-for-it.sh", "mysql:3306", "--", "./balance"]
+CMD /wait-for-it.sh mysql:3306 --timeout=90 --strict -- /wait-for-it.sh kafka:9092 --timeout=90 --strict -- ./balance
