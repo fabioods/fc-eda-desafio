@@ -5,8 +5,6 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/melisource/fury_yms-process-management/pkg/rollback"
-
 	"github.com/stretchr/testify/assert"
 )
 
